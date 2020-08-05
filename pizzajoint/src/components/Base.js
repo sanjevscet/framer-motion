@@ -35,6 +35,18 @@ const nextVariant = {
 
 }
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255, 255, 255)",
+    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+    transition: {
+      yoyo:10,
+      duration: 0.3
+    }
+  }
+}
+
 
 const Base = ({ addBase, pizza }) => {
   const bases = ['Classic', 'Thin & Crispy', 'Thick Crust'];
@@ -66,12 +78,10 @@ const Base = ({ addBase, pizza }) => {
         variants={nextVariant}
         >
           <Link to="/toppings">
-            <motion.button whileHover={{
-              scale: 1.1,
-              textShadow: "0px 0px 8px rgb(255, 255, 255)",
-              boxShadow: "0px 0px 8px rgb(255, 255, 255)"
-
-            }}>Next</motion.button>
+            <motion.button
+              variants={buttonVariants}
+              whileHover="hover"
+            >Next</motion.button>
           </Link>
         </motion.div>
       )}
